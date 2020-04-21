@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Container, Row, Col, ListGroup, Card, Button } from 'react-bootstrap/';
+import { Container, Row, Col, ListGroup } from 'react-bootstrap/';
 
 
 class List extends React.Component {
@@ -67,17 +67,10 @@ class List extends React.Component {
             </ListGroup.Item>
             <ListGroup.Item></ListGroup.Item>
           </ListGroup>
-
-          <Container className="mt-5">
-            <Row>
-            <Col sm={12} xs={12} md={12} lg={12} className="conteudo">Saiba mais sobre o coronavírus</Col>
-              <Col sm={12} xs={12} md={12} lg={12} >
-                <a variant="primary" size="lg" className="but-center" block>
-                Clique aqui
-                </a>
-              </Col>
-            </Row>
-          </Container>
+          <div className="mt-5 conteudo">
+          <h3>#FiqueEmCasa</h3>
+          <p>O coronavírus não é brincaira, não é uma gripe, não é um resfriado.</p>
+          </div>
         </section>
         <footer className="conteudo ">
           Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
