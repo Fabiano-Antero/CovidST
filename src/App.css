@@ -42,7 +42,7 @@ body{
   border-top-left-radius: 6%;
   border-top-right-radius: 6%;
   background-position: center;
-  height: 65vh;
+  height: 115vh;
   border-top: 15px;
     
   
@@ -67,13 +67,14 @@ body{
 }
 
 footer{
+  font-size: 10px;
   color: rgb(23, 29, 34);
-  padding: 2% 0% 2% 0%;
+  padding: 3% 0% 3% 0%;
   background-color: white;
   box-shadow: 0px 0px 5px grey;
   position:absolute;
-  bottom:0;
-  height: 10%;
+  bottom:-290px;
+  height: 13%;
   width:100%;
 }
 a:visited {
@@ -82,15 +83,15 @@ a:visited {
 
 @media only screen and (max-width: 700px) {
 
-  footer{
+  footer {
     color: rgb(23, 29, 34);
     padding: 10% 0% 10% 0%;
     background-color: white;
-    position:absolute;
-    bottom:0;
+    position: absolute;
+    bottom: -112px;
     height: 10%;
     box-shadow: 0px 0px 5px grey;
-    width:100%;
+    width: 100%;
     font-size: 12px;
   }
 
@@ -123,7 +124,7 @@ a:visited {
     background-repeat: repeat;
     background-position: center;
   
-    height: 69vh;
+    height: 75vh;
     
   }
   

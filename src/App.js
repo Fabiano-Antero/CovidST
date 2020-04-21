@@ -68,8 +68,8 @@ class List extends React.Component {
             <ListGroup.Item></ListGroup.Item>
           </ListGroup>
           <div className="mt-5 conteudo">
-          <h3>#FiqueEmCasa</h3>
-          <p>O coronavírus não é brincaira, não é uma gripe, não é um resfriado.</p>
+            <h3>#FiqueEmCasa</h3>
+            <p>O coronavírus não é brincadeira, ele mata!</p>            
           </div>
         </section>
         <footer className="conteudo ">
