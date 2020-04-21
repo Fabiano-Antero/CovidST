@@ -1,38 +1,131 @@
-.App {
+*  {
+  margin:0;
+  padding:0;
+}
+
+html, body {height:100%;}
+
+body{
+  background-color: #021143  !important;
+  color: black !important;
+  font-family: Arial !important;
+
+}
+.mt-5{
+  margin-top: 30mm;
+
+}
+
+
+
+.logo{
+  background-image: url(./assets/covd-192.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10%;
+  width: 100px;
+  height: 150px;
+  margin: auto;
+
+}
+
+.titulo{
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  margin-bottom: 10mm;
+}
+
+.container01{
+  background-color: white;
+  background-repeat: repeat;
+  border-top-left-radius: 6%;
+  border-top-right-radius: 6%;
+  background-position: center;
+  height: 65vh;
+  border-top: 15px;
+    
+  
+}.bord-list{
+ padding-top: 5%;
+}
+
+
+.conteudo{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.green{
+  color: green;
+}
+.red{
+  color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.cont-size{
+  font-size: 18px;
+}
+
+footer{
+  color: rgb(23, 29, 34);
+  padding: 2% 0% 2% 0%;
+  background-color: white;
+  box-shadow: 0px 0px 5px grey;
+  position:absolute;
+  bottom:0;
+  height: 10%;
+  width:100%;
+}
+a:visited {
+  color: rgb(23, 29, 34);
+}
+
+@media only screen and (max-width: 700px) {
+
+  footer{
+    color: rgb(23, 29, 34);
+    padding: 10% 0% 10% 0%;
+    background-color: white;
+    position:absolute;
+    bottom:0;
+    height: 10%;
+    box-shadow: 0px 0px 5px grey;
+    width:100%;
+    font-size: 12px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .logo{
+    background-image: url(./assets/covd-192.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35%;
+    width: 100px;
+    height: 150px;
+    margin: auto;
+    padding-bottom: 50mm;
+  
   }
-  to {
-    transform: rotate(360deg);
+
+  .titulo{
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    margin-bottom: 10mm;
+    font-size: 18px;
   }
+
+  .conteudo{
+    text-align: center;
+  }
+  
+  .container01{
+    background-color: white;
+    background-repeat: repeat;
+    background-position: center;
+  
+    height: 69vh;
+    
+  }
+  
+
 }

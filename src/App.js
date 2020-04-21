@@ -1,26 +1,92 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container, Row, Col, ListGroup, Card, Button } from 'react-bootstrap/';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class List extends React.Component {
+  state = {
+    statusCovid: {}
+
+  };
+
+  componentDidMount() {
+    fetch('https://brasil.io/api/dataset/covid19/caso/data?is_last=True&state=PB')
+      .then(res => {
+        return res.json();
+      })
+      .then(d => {
+        this.state.statusCovid = this.setState({ statusCovid: d.results[12] });
+
+        console.log("state", this.state.statusCovid)
+      })
+      .catch(error => console.log(error))
+
+
+
+
+  }
+
+
+  render() {
+
+    return (
+      <section className="section0">
+        <Container fluid>
+          <Row>
+            <Col sm={12} xs={12} md={12} lg={12} className="logo">
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12} xs={12} md={12} lg={12}>
+              <h3 className="titulo">{this.state.statusCovid.city} Covid-19</h3>
+            </Col>
+          </Row>
+        </Container>
+        <section className="container01 cont-size bord-list" >
+
+          <ListGroup variant="flush" className="conteudo bord-list">
+            <ListGroup.Item>Casos confirmados:
+              <strong className="red">
+                {' ' + this.state.statusCovid.confirmed}
+              </strong>
+            </ListGroup.Item>
+            <ListGroup.Item>Óbitos confirmados:
+              <strong>
+                {' ' + this.state.statusCovid.deaths}
+              </strong>
+            </ListGroup.Item>
+            <ListGroup.Item>Índice de mortalidade:
+              <strong>
+                {' ' + this.state.statusCovid.death_rate + '%'}
+              </strong>
+            </ListGroup.Item>
+            <ListGroup.Item>Dados atualizados:
+              <strong className="green">
+                {' ' + this.state.statusCovid.date}
+              </strong>
+            </ListGroup.Item>
+            <ListGroup.Item></ListGroup.Item>
+          </ListGroup>
+
+          <Container className="mt-5">
+            <Row>
+            <Col sm={12} xs={12} md={12} lg={12} className="conteudo">Saiba mais sobre o coronavírus</Col>
+              <Col sm={12} xs={12} md={12} lg={12} >
+                <a variant="primary" size="lg" className="but-center" block>
+                Clique aqui
+                </a>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <footer className="conteudo ">
+          Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
+        </footer>
+      </section>
+
+    );
+  }
 }
 
-export default App;
+
+export default List;
