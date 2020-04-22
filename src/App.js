@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Container, Row, Col, ListGroup } from 'react-bootstrap/';
+import { Container, Row, Col, ListGroup, Alert } from 'react-bootstrap/';
 import { Fragment } from 'react'
 
 
@@ -16,7 +16,7 @@ class List extends React.Component {
         return res.json();
       })
       .then(d => {
-        this.state.statusCovid = this.setState({ statusCovid: d.results[12] });
+        this.state.statusCovid = this.setState({ statusCovid: d.results[15] });
 
         console.log("state", this.state.statusCovid)
       })
@@ -29,6 +29,26 @@ class List extends React.Component {
 
 
   render() {
+    [
+      'primary',
+      'secondary',
+      'success',
+      'danger',
+      'warning',
+      'info',
+      'light',
+      'dark',
+    ].map((variant, idx) => (
+      <Alert key={idx} variant={variant}>
+        This is a {variant} alert with{' '}
+        <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
+        like.
+      </Alert>
+    ));
+
+    setTimeout(() => {
+      console.log('Hello, World!')
+    }, 3000);
 
     return ( 
     <Fragment>
@@ -73,7 +93,9 @@ class List extends React.Component {
           <div className="mt-5 conteudo bord-text">
             <h3>#FiqueEmCasa</h3>
             <p>As atualizações dos dados desta página, são realizadas automaticamente assim que os dados são inseridos no banco de dados.</p>
+            
           </div>
+          
         </section>
 
       </section>
