@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Container, Row, Col, ListGroup, Card, Navbar } from 'react-bootstrap/';
 import { Fragment } from 'react';
-import { TransverseLoading } from 'react-loadingg';
+import { TouchBallLoading } from 'react-loadingg';
 
 
 
@@ -75,35 +75,9 @@ class List extends React.Component {
               <Col>
                 <div>
                   <Navbar className="barra">
-                    <Row >
-                      <Col sm={4} xs={4} md={4} lg={4}>
-                        <Navbar.Brand href="#home">
-                          <span className="bar-cor">
-                            <img className="menu-alinha" src="https://i.imgur.com/bHv5srV.png" fluid ></img>
-                            <p>
-                              Em breve
-                          </p>
+                          <span className="menu-alinha">
+                            <TouchBallLoading />
                           </span>
-                        </Navbar.Brand>
-                      </Col>
-                      <Col sm={4} xs={4} md={4} lg={4}>
-                        <Navbar.Brand href="#home">
-                          <span className="bar-cor">
-                            <img className="menu-alinha" src="https://i.imgur.com/bHv5srV.png" fluid ></img>
-                            <p>
-                              Em breve
-                          </p>
-                          </span>
-                        </Navbar.Brand>
-                      </Col>
-                      <Col sm={1} xs={1} md={1} lg={1}>
-                        <Navbar.Brand href="#home">
-                          
-                          <TransverseLoading />;
-                          
-                        </Navbar.Brand>
-                      </Col>
-                    </Row>
                   </Navbar>
                 </div>
               </Col>
