@@ -41,15 +41,10 @@ body {
   background-position: center;
   height: 115vh;
   border-radius: 10mm 10mm 0mm 0mm;
- 
 }
 
 .bord-list {
   padding-top: 5%;
-}
-
-.bord-text {
-  padding: 5%;
 }
 
 .conteudo {
@@ -86,8 +81,13 @@ a:visited {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 720px) {
-  .bord-text {
-    padding: 0% 10% 20% 10% !important;
+
+  body {
+    background-image:url('../src/assets/bg.png') !important;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    color: black !important;
+    font-family: Arial !important;
   }
   footer {
     font-size: 12px;
@@ -117,8 +117,8 @@ a:visited {
     margin-bottom: 10mm;
     font-size: 18px;
   }
-  .conteudo {
-    text-align: center;
+  .conteudo-lef {
+    text-align: left !important;
   }
   .container01 {
     background-color: white;

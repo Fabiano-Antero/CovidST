@@ -1,58 +1,61 @@
 import React from 'react';
 import './App.css';
-import { Container, Row, Col, ListGroup, Alert } from 'react-bootstrap/';
+import { Container, Row, Col, ListGroup, Card, Button } from 'react-bootstrap/';
 import { Fragment } from 'react'
 
 
+
 class List extends React.Component {
+
+
+
   state = {
     statusCovid: [],
-    dados: [{}]
+    boletin: []
   };
 
   componentDidMount() {
+
+
     fetch('https://brasil.io/api/dataset/covid19/caso/data?is_last=True&state=PB')
       .then(res => {
         return res.json();
       })
       .then(d => {
-        this.setState({ statusCovid: d.results.find( 
+        this.setState({
+          statusCovid: d.results.find(
 
-          cidade => cidade.city === 'Santa Rita' 
+            cidade => cidade.city === 'Santa Rita'
 
-          ) });
+          )
+        });
         console.log("state", this.state.statusCovid)
       })
       .catch(error => console.log(error))
 
 
-
+    fetch('https://brasil.io/api/dataset/covid19/boletim/data?state=PB')
+      .then(res => {
+        return res.json();
+      })
+      .then(b => {
+        let dataValue = new Date();
+        this.setState({
+          boletin: b.results.find(
+            dataAt => dataAt.date === '2020-04-21'
+          )
+        });
+        console.log("state", this.state.boletin)
+      })
+      .catch(error => console.log(error))
 
   }
 
 
+
+
+
   render() {
-
-
-    setTimeout(() => {
-      [
-        'primary',
-        'secondary',
-        'success',
-        'danger',
-        'warning',
-        'info',
-        'light',
-        'dark',
-      ].map((variant, idx) => (
-        <Alert key={idx} variant={variant}>
-          This is a {variant} alert with{' '}
-          <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-          like.
-        </Alert>
-      ));
-    }, 3000);
-
     return (
       <Fragment>
 
@@ -70,40 +73,52 @@ class List extends React.Component {
           </Container>
           <section className="container01 cont-size bord-list" >
 
-            <ListGroup variant="flush" className="conteudo bord-list">
-              <ListGroup.Item>Casos confirmados:
+            <ListGroup variant="flush" className=" conteudo conteudo-lef bord-list">
+              <ListGroup.Item>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/EhoBGQy.png"></img>&nbsp;&nbsp;&nbsp;Casos confirmados:&nbsp;&nbsp;
               <strong className="red">
-              {' ' + this.state.statusCovid.confirmed} 
-              </strong>
+                  {' ' + this.state.statusCovid.confirmed }
+                </strong> 
               </ListGroup.Item>
-              <ListGroup.Item>Óbitos confirmados: 
+              <ListGroup.Item>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/0bYvAFM.png"></img>&nbsp;&nbsp;&nbsp;Óbitos confirmados:&nbsp;&nbsp;
               <strong>
-                  3
+                  3 
               </strong>
               </ListGroup.Item>
-              <ListGroup.Item>Índice de mortalidade:
+              <ListGroup.Item>&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/ApVlTed.png"></img>&nbsp;&nbsp;&nbsp;Índice de mortalidade:&nbsp;&nbsp;
               <strong>
-                  { ' ' + this.state.statusCovid.death_rate }
-              </strong>
+                  {' ' + this.state.statusCovid.death_rate}
+                </strong>
               </ListGroup.Item>
-              <ListGroup.Item>Dados atualizados:
+              <ListGroup.Item>&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/w38bJkC.png"></img>&nbsp;&nbsp;&nbsp;Dados atualizados:&nbsp;&nbsp;
               <strong className="green">
-              {' ' + this.state.statusCovid.date }
-              </strong>
+                  {' ' + this.state.statusCovid.date}
+                </strong>
               </ListGroup.Item>
-              <ListGroup.Item></ListGroup.Item>
-            </ListGroup>
-            <div className="mt-5 conteudo bord-text">
-              <h3>#FiqueEmCasa</h3>
-              <p>As atualizações dos dados desta página, são realizadas automaticamente assim que os dados são inseridos no banco de dados.</p>
+              <ListGroup.Item>
+                <div className="mt-5 conteudo bord-text">
 
-            </div>
-          
+                  <Card style={{ height: '11rem' }}>
+
+                    <Card.Header>Boletim do governo da Paraíba</Card.Header>
+                    <Card.Text>
+                      <br></br>
+                      <p>Atualização COVID-19 21/04/2020</p>
+                      <a href={this.state.boletin.url}>www.paraiba.pb.gov.br</a>
+
+                    </Card.Text>
+
+                  </Card>
+                </div>
+              </ListGroup.Item>
+            </ListGroup>
+
+
           </section>
 
         </section>
         <footer className="conteudo ">
-          Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
+          Copyright © 2020 | Desenvolvido por <a href="https://brasil.io/home/" target="_blank"> Fabiano Antero</a>
+          <p>API útilizada no desenvolvimento: <a href="https://www.instagram.com/fabiano.antero/" target="_blank">www.brasil.io</a></p>
         </footer>
       </Fragment>
     );
