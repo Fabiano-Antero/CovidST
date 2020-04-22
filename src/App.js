@@ -50,22 +50,22 @@ class List extends React.Component {
           <ListGroup variant="flush" className="conteudo bord-list">
             <ListGroup.Item>Casos confirmados:
               <strong className="red">
-                {' ' + this.state.statusCovid.confirmed}
+                31
               </strong>
             </ListGroup.Item>
             <ListGroup.Item>Óbitos confirmados:
               <strong>
-                {' ' + this.state.statusCovid.deaths}
+               3
               </strong>
             </ListGroup.Item>
             <ListGroup.Item>Índice de mortalidade:
               <strong>
-                {' ' + this.state.statusCovid.death_rate + '%'}
+                0.1%
               </strong>
             </ListGroup.Item>
             <ListGroup.Item>Dados atualizados:
               <strong className="green">
-                {' ' + this.state.statusCovid.date}
+                20/04/2020
               </strong>
             </ListGroup.Item>
             <ListGroup.Item></ListGroup.Item>
