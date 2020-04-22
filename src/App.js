@@ -63,7 +63,7 @@ class List extends React.Component {
                 0.1%
               </strong>
             </ListGroup.Item>
-            <ListGroup.Item>Dados atualizados:
+            <ListGroup.Item>Dados atualizados: 
               <strong className="green">
                 20/04/2020
               </strong>
