@@ -6,8 +6,8 @@ import { Fragment } from 'react'
 
 class List extends React.Component {
   state = {
-    statusCovid: {}
-
+    statusCovid: {},
+    teste: {}
   };
 
   componentDidMount() {
@@ -16,8 +16,15 @@ class List extends React.Component {
         return res.json();
       })
       .then(d => {
-        this.state.statusCovid = this.setState({ statusCovid: d.results[16]});
+        this.state.statusCovid = this.setState({ statusCovid: d.results[16] });
 
+        Object.entries(this.state.statusCovid).forEach(([key, value]) => {
+          if(key.indexOf("Santa Rita")> -1){
+             this.state.teste[key] = value;
+
+          }
+      });
+        console.log( this.state.teste);
         console.log("state", this.state.statusCovid)
       })
       .catch(error => console.log(error))
@@ -29,80 +36,80 @@ class List extends React.Component {
 
 
   render() {
-    [
-      'primary',
-      'secondary',
-      'success',
-      'danger',
-      'warning',
-      'info',
-      'light',
-      'dark',
-    ].map((variant, idx) => (
-      <Alert key={idx} variant={variant}>
-        This is a {variant} alert with{' '}
-        <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
-        like.
-      </Alert>
-    ));
+
 
     setTimeout(() => {
-      console.log('Hello, World!')
+      [
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'light',
+        'dark',
+      ].map((variant, idx) => (
+        <Alert key={idx} variant={variant}>
+          This is a {variant} alert with{' '}
+          <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you
+          like.
+        </Alert>
+      ));
     }, 3000);
 
-    return ( 
-    <Fragment>
+    return (
+      <Fragment>
 
-      <section >
-        <Container className="section0" fluid>
-          <Row>
-            <Col sm={12} xs={12} md={12} lg={12} className="logo">
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={12} xs={12} md={12} lg={12}>
-              <h3 className="titulo">{this.state.statusCovid.city} Covid-19</h3>
-            </Col>
-          </Row>
-        </Container>
-        <section className="container01 cont-size bord-list" >
+        <section >
+          <Container className="section0" fluid>
+            <Row>
+              <Col sm={12} xs={12} md={12} lg={12} className="logo">
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={12} xs={12} md={12} lg={12}>
+                <h3 className="titulo">{this.state.statusCovid.city} Covid-19</h3>
+              </Col>
+            </Row>
+          </Container>
+          <section className="container01 cont-size bord-list" >
 
-          <ListGroup variant="flush" className="conteudo bord-list">
-            <ListGroup.Item>Casos confirmados:
+            <ListGroup variant="flush" className="conteudo bord-list">
+              <ListGroup.Item>Casos confirmados:
               <strong className="red">
-                24
+                  24
               </strong>
-            </ListGroup.Item>
-            <ListGroup.Item>Óbitos confirmados:
+              </ListGroup.Item>
+              <ListGroup.Item>Óbitos confirmados:
               <strong>
-               3
+                  3
               </strong>
-            </ListGroup.Item>
-            <ListGroup.Item>Índice de mortalidade:
+              </ListGroup.Item>
+              <ListGroup.Item>Índice de mortalidade:
               <strong>
-                0.1%
+                  { ' ' + this.state.statusCovid.death_rate }
               </strong>
-            </ListGroup.Item>
-            <ListGroup.Item>Dados atualizados:
+              </ListGroup.Item>
+              <ListGroup.Item>Dados atualizados:
               <strong className="green">
-                 21/04/2020
+              {' ' + this.state.statusCovid.date }
               </strong>
-            </ListGroup.Item>
-            <ListGroup.Item></ListGroup.Item>
-          </ListGroup>
-          <div className="mt-5 conteudo bord-text">
-            <h3>#FiqueEmCasa</h3>
-            <p>As atualizações dos dados desta página, são realizadas automaticamente assim que os dados são inseridos no banco de dados.</p>
-            
-          </div>
-          
-        </section>
+              </ListGroup.Item>
+              <ListGroup.Item></ListGroup.Item>
+            </ListGroup>
+            <div className="mt-5 conteudo bord-text">
+              <h3>#FiqueEmCasa</h3>
+              <p>As atualizações dos dados desta página, são realizadas automaticamente assim que os dados são inseridos no banco de dados.</p>
 
-      </section>
-      <footer className="conteudo ">
-        Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
-      </footer>
-    </Fragment>
+            </div>
+          
+          </section>
+
+        </section>
+        <footer className="conteudo ">
+          Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
+        </footer>
+      </Fragment>
     );
   }
 }

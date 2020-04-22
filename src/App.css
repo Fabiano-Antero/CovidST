@@ -1,25 +1,24 @@
-*  {
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-html, body {height:100%;}
+html, body {
+  height: 100%;
+}
 
-body{
-  background-color: #021143  !important;
+body {
+  background-color: #021143 !important;
   color: black !important;
   font-family: Arial !important;
-
 }
-.mt-5{
+
+.mt-5 {
   margin-top: 30mm;
- padding-bottom: 30mm;
-
+  padding-bottom: 30mm;
 }
 
-
-
-.logo{
+.logo {
   background-image: url(./assets/covd-192.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -27,73 +26,69 @@ body{
   width: 100px;
   height: 150px;
   margin: auto;
-
 }
 
-.titulo{
+.titulo {
   color: white;
   font-family: Arial;
   text-align: center;
   margin-bottom: 10mm;
 }
 
-.container01{
+.container01 {
   background-color: white;
   background-repeat: repeat;
-  border-top-left-radius: 6%;
-  border-top-right-radius: 6%;
   background-position: center;
   height: 115vh;
-  border-top: 15px;
-    
-  
+  border-radius: 10mm 10mm 0mm 0mm;
+ 
 }
 
-.bord-list{
- padding-top: 5%;
+.bord-list {
+  padding-top: 5%;
 }
 
-.bord-text{
+.bord-text {
   padding: 5%;
 }
 
-.conteudo{
+.conteudo {
   text-align: center;
 }
 
-.green{
+.green {
   color: green;
 }
-.red{
+
+.red {
   color: red;
 }
 
-.cont-size{
+.cont-size {
   font-size: 18px;
 }
 
-footer{
+footer {
   font-size: 10px;
   color: rgb(23, 29, 34);
   padding: 3% 0% 3% 0%;
   background-color: white;
   box-shadow: 0px 0px 5px grey;
   position: fixed;
-  bottom:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   height: 10%;
-  width:100%;
+  width: 100%;
 }
+
 a:visited {
   color: rgb(23, 29, 34);
 }
 
 @media only screen and (min-width: 320px) and (max-width: 720px) {
-
-  .bord-text{
+  .bord-text {
     padding: 0% 10% 20% 10% !important;
   }
-
   footer {
     font-size: 12px;
     color: rgb(23, 29, 34);
@@ -101,13 +96,11 @@ a:visited {
     box-shadow: 0px 0px 5px grey;
     padding: 8% 5% 5% 5%;
     position: fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-  
+    bottom: 0;
+    left: 0;
+    width: 100%;
   }
-
-  .logo{
+  .logo {
     background-image: url(./assets/covd-192.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -116,29 +109,21 @@ a:visited {
     height: 150px;
     margin: auto;
     padding-bottom: 50mm;
-  
   }
-
-  .titulo{
+  .titulo {
     color: white;
     font-family: Arial;
     text-align: center;
     margin-bottom: 10mm;
     font-size: 18px;
   }
-
-  .conteudo{
+  .conteudo {
     text-align: center;
   }
-  
-  .container01{
+  .container01 {
     background-color: white;
     background-repeat: repeat;
     background-position: center;
-  
     height: 100vh;
-    
   }
-  
-
 }
