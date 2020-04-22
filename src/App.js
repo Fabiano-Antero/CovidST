@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Container, Row, Col, ListGroup } from 'react-bootstrap/';
+import { Fragment } from 'react'
 
 
 class List extends React.Component {
@@ -29,7 +30,9 @@ class List extends React.Component {
 
   render() {
 
-    return (
+    return ( 
+    <Fragment>
+
       <section className="section0">
         <Container fluid>
           <Row>
@@ -70,14 +73,15 @@ class List extends React.Component {
           <div className="mt-5 conteudo">
             <h3>#FiqueEmCasa</h3>
             <p>O coronavírus não é brincadeira, não é uma gripe, não é um resfriado.</p>
-            <p>O coronavírus mata!</p>          
+            <p>O coronavírus mata!</p>
           </div>
         </section>
-        <footer className="conteudo ">
-          Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
-        </footer>
-      </section>
 
+      </section>
+      <footer className="conteudo ">
+        Copyright © 2020 | Desenvolvido por <a href="https://www.instagram.com/fabiano.antero/" target="_blank"> Fabiano Antero</a>
+      </footer>
+    </Fragment>
     );
   }
 }

@@ -46,10 +46,15 @@ body{
   border-top: 15px;
     
   
-}.bord-list{
+}
+
+.bord-list{
  padding-top: 5%;
 }
 
+.bord-text{
+  padding: 5%;
+}
 
 .conteudo{
   text-align: center;
@@ -73,7 +78,7 @@ footer{
   background-color: white;
   box-shadow: 0px 0px 5px grey;
   position:absolute;
-  bottom:-290px;
+  bottom: 0px;
   height: 13%;
   width:100%;
 }
