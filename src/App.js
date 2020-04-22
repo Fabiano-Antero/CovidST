@@ -33,8 +33,8 @@ class List extends React.Component {
     return ( 
     <Fragment>
 
-      <section className="section0">
-        <Container fluid>
+      <section >
+        <Container className="section0" fluid>
           <Row>
             <Col sm={12} xs={12} md={12} lg={12} className="logo">
             </Col>
@@ -63,9 +63,9 @@ class List extends React.Component {
                 0.1%
               </strong>
             </ListGroup.Item>
-            <ListGroup.Item>Dados atualizados: 
+            <ListGroup.Item>Dados atualizados:
               <strong className="green">
-                20/04/2020
+                 21/04/2020
               </strong>
             </ListGroup.Item>
             <ListGroup.Item></ListGroup.Item>
