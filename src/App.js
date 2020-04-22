@@ -16,7 +16,7 @@ class List extends React.Component {
         return res.json();
       })
       .then(d => {
-        this.state.statusCovid = this.setState({ statusCovid: d.results[15] });
+        this.state.statusCovid = this.setState({ statusCovid: d.results[16]});
 
         console.log("state", this.state.statusCovid)
       })
