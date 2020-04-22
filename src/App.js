@@ -72,8 +72,7 @@ class List extends React.Component {
           </ListGroup>
           <div className="mt-5 conteudo bord-text">
             <h3>#FiqueEmCasa</h3>
-            <p>O coronavírus não é brincadeira, não é uma gripe, não é um resfriado.</p>
-            <p>O coronavírus mata!</p>
+            <p>As atualizações do dados desta página são realizadas automaticamente, assim que os dados são inseridos no banco de dadeos.</p>
           </div>
         </section>
 
