@@ -6,8 +6,8 @@ import { Fragment } from 'react'
 
 class List extends React.Component {
   state = {
-    statusCovid: {},
-    teste: {}
+    statusCovid: [],
+    dados: [{}]
   };
 
   componentDidMount() {
@@ -16,15 +16,11 @@ class List extends React.Component {
         return res.json();
       })
       .then(d => {
-        this.state.statusCovid = this.setState({ statusCovid: d.results[16] });
+        this.setState({ statusCovid: d.results.find( 
 
-        Object.entries(this.state.statusCovid).forEach(([key, value]) => {
-          if(key.indexOf("Santa Rita")> -1){
-             this.state.teste[key] = value;
+          cidade => cidade.city === 'Santa Rita' 
 
-          }
-      });
-        console.log( this.state.teste);
+          ) });
         console.log("state", this.state.statusCovid)
       })
       .catch(error => console.log(error))
@@ -77,10 +73,10 @@ class List extends React.Component {
             <ListGroup variant="flush" className="conteudo bord-list">
               <ListGroup.Item>Casos confirmados:
               <strong className="red">
-                  24
+              {' ' + this.state.statusCovid.confirmed} 
               </strong>
               </ListGroup.Item>
-              <ListGroup.Item>Óbitos confirmados:
+              <ListGroup.Item>Óbitos confirmados: 
               <strong>
                   3
               </strong>
