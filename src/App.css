@@ -93,7 +93,7 @@ a:visited {
     padding: 10% 0% 10% 0%;
     background-color: white;
     position: absolute;
-    bottom: -112px;
+    bottom: 0px;
     height: 10%;
     box-shadow: 0px 0px 5px grey;
     width: 100%;
