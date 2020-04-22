@@ -39,7 +39,7 @@ body {
   background-color: white;
   background-repeat: repeat;
   background-position: center;
-  height: 115vh;
+  height: 100vh;
   border-radius: 10mm 10mm 0mm 0mm;
 }
 
@@ -77,6 +77,25 @@ footer {
 
 a:visited {
   color: white;
+}
+
+.barra{
+  color: white !important;
+  background-color: #052F5D;
+  border-radius: 3mm;
+  display: block;
+  height: 110px;
+}
+.bar-cor{
+  font-size: 15px;
+  color: white;
+}
+
+.menu-alinha{
+  padding-top: 35%;
+  padding-bottom: 15%;
+  display: block;
+  margin: auto;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 720px) {
@@ -129,4 +148,23 @@ a:visited {
     color: white;
   }
   
+  .barra{
+    color: white !important;
+    background-color: #052F5D;
+    border-radius: 3mm;
+    height: 110px;
+    margin-bottom: 5%;
+  }
+  .bar-cor{
+    font-size: 15px;
+    color: white;
+  }
+
+
+  .menu-alinha{
+    padding-top: 35%;
+    padding-bottom: 15%;
+    display: block;
+    margin: auto;
+  }
 }

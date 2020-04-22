@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Container, Row, Col, ListGroup, Card, Button } from 'react-bootstrap/';
-import { Fragment } from 'react'
+import { Container, Row, Col, ListGroup, Card, Navbar } from 'react-bootstrap/';
+import { Fragment } from 'react';
+import { TransverseLoading } from 'react-loadingg';
 
 
 
@@ -70,18 +71,55 @@ class List extends React.Component {
                 <h3 className="titulo">{this.state.statusCovid.city} Covid-19</h3>
               </Col>
             </Row>
+            <Row>
+              <Col>
+                <div>
+                  <Navbar className="barra">
+                    <Row >
+                      <Col sm={4} xs={4} md={4} lg={4}>
+                        <Navbar.Brand href="#home">
+                          <span className="bar-cor">
+                            <img className="menu-alinha" src="https://i.imgur.com/bHv5srV.png" fluid ></img>
+                            <p>
+                              Em breve
+                          </p>
+                          </span>
+                        </Navbar.Brand>
+                      </Col>
+                      <Col sm={4} xs={4} md={4} lg={4}>
+                        <Navbar.Brand href="#home">
+                          <span className="bar-cor">
+                            <img className="menu-alinha" src="https://i.imgur.com/bHv5srV.png" fluid ></img>
+                            <p>
+                              Em breve
+                          </p>
+                          </span>
+                        </Navbar.Brand>
+                      </Col>
+                      <Col sm={1} xs={1} md={1} lg={1}>
+                        <Navbar.Brand href="#home">
+                          
+                          <TransverseLoading />;
+                          
+                        </Navbar.Brand>
+                      </Col>
+                    </Row>
+                  </Navbar>
+                </div>
+              </Col>
+            </Row>
           </Container>
           <section className="container01 cont-size bord-list" >
 
             <ListGroup variant="flush" className=" conteudo conteudo-lef bord-list">
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/EhoBGQy.png"></img>&nbsp;&nbsp;&nbsp;Casos confirmados:&nbsp;&nbsp;
               <strong className="red">
-                  {' ' + this.state.statusCovid.confirmed }
-                </strong> 
+                  {' ' + this.state.statusCovid.confirmed}
+                </strong>
               </ListGroup.Item>
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/0bYvAFM.png"></img>&nbsp;&nbsp;&nbsp;Óbitos confirmados:&nbsp;&nbsp;
               <strong>
-                  3 
+                  3
               </strong>
               </ListGroup.Item>
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/ApVlTed.png"></img>&nbsp;&nbsp;&nbsp;Índice de mortalidade:&nbsp;&nbsp;
