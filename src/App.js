@@ -50,7 +50,7 @@ class List extends React.Component {
           <ListGroup variant="flush" className="conteudo bord-list">
             <ListGroup.Item>Casos confirmados:
               <strong className="red">
-                31
+                24
               </strong>
             </ListGroup.Item>
             <ListGroup.Item>Óbitos confirmados:
