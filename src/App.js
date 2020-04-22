@@ -72,7 +72,7 @@ class List extends React.Component {
           </ListGroup>
           <div className="mt-5 conteudo bord-text">
             <h3>#FiqueEmCasa</h3>
-            <p>As atualizações do dados desta página são realizadas automaticamente, assim que os dados são inseridos no banco de dadeos.</p>
+            <p>As atualizações dos dados desta página, são realizadas automaticamente assim que os dados são inseridos no banco de dadeos.</p>
           </div>
         </section>
 
