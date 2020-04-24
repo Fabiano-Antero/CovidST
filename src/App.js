@@ -93,7 +93,7 @@ class List extends React.Component {
               </ListGroup.Item>
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/0bYvAFM.png"></img>&nbsp;&nbsp;&nbsp;Óbitos confirmados:&nbsp;&nbsp;
               <strong>
-    { this.state.statusCovid.death }
+    { this.state.statusCovid.deaths }
                   </strong>
               </ListGroup.Item>
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/ApVlTed.png"></img>&nbsp;&nbsp;&nbsp;Índice de mortalidade:&nbsp;&nbsp;
