@@ -32,7 +32,17 @@ class List extends React.Component {
         });
         console.log("state", this.state.statusCovid)
       })
-      .catch(error => console.log(error))
+      .catch(error =>
+
+        error.map((variant, idx) => (
+          <Alert key={idx} variant={variant}>
+            This is a {variant} alert—check it out!
+          </Alert>
+        ))
+
+        
+
+      )
 
 
     fetch('https://brasil.io/api/dataset/covid19/boletim/data?state=PB')
@@ -75,9 +85,9 @@ class List extends React.Component {
               <Col>
                 <div>
                   <Navbar className="barra">
-                          <span className="menu-alinha">
-                            <TouchBallLoading />
-                          </span>
+                    <span className="menu-alinha">
+                      <TouchBallLoading />
+                    </span>
                   </Navbar>
                 </div>
               </Col>
@@ -93,8 +103,8 @@ class List extends React.Component {
               </ListGroup.Item>
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/0bYvAFM.png"></img>&nbsp;&nbsp;&nbsp;Óbitos confirmados:&nbsp;&nbsp;
               <strong>
-    { this.state.statusCovid.deaths }
-                  </strong>
+                  {this.state.statusCovid.deaths}
+                </strong>
               </ListGroup.Item>
               <ListGroup.Item>&nbsp;&nbsp;&nbsp;<img src="https://i.imgur.com/ApVlTed.png"></img>&nbsp;&nbsp;&nbsp;Índice de mortalidade:&nbsp;&nbsp;
               <strong>
